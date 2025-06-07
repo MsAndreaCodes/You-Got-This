@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🙌🏾 You Got This 🙌🏾</title>
     
-    <!-- Inline Bootstrap Grid CSS for mobile compatibility -->
     <style>
+        /* Bootstrap Grid CSS */
         .container-fluid{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
         .row{display:flex;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}
         .col-12{flex:0 0 100%;max-width:100%}
@@ -36,10 +36,254 @@
         .visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
         .spinner-border{display:inline-block;width:2rem;height:2rem;vertical-align:-.125em;border:.25em solid currentColor;border-right-color:transparent;border-radius:50%;animation:spinner-border .75s linear infinite}
         @keyframes spinner-border{to{transform:rotate(360deg)}}
+
+        /* Custom Styles */
+        :root {
+            --bg-primary: #e6f7ff;
+            --text-primary: #333;
+            --text-secondary: #444;
+            --btn-boost: #FFB3BA;
+            --btn-countdown: #FFDFBA;
+            --btn-win: #FFFFBA;
+            --btn-lose: #BAFFC9;
+            --btn-neutral: #BAE1FF;
+            --btn-treat: #D5BAFF;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.15);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            font-family: 'Helvetica', Arial, sans-serif;
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .emoji {
+            font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Android Emoji", "EmojiSymbols", "EmojiOne Mozilla", "Twemoji Mozilla", "Segoe UI Symbol", "Noto Emoji";
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-feature-settings: "liga";
+            font-feature-settings: "liga";
+        }
+
+        h1.display-4 {
+            color: var(--text-primary) !important;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            text-shadow: 2px 2px 4px var(--shadow-light);
+        }
+
+        .message-card {
+            background: white;
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 12px var(--shadow-light);
+            min-height: 200px;
+            transition: var(--transition);
+        }
+
+        .message-area {
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .section-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow-light);
+            transition: var(--transition);
+        }
+
+        .section-header h5 {
+            color: var(--text-secondary);
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .btn-custom {
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 0.75rem 1.5rem;
+            border: 3px solid transparent;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: 0 2px 6px var(--shadow-light);
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow-medium);
+        }
+
+        .btn-boost {
+            background-color: var(--btn-boost);
+            color: var(--text-primary);
+        }
+
+        .btn-countdown {
+            background-color: var(--btn-countdown);
+            color: var(--text-primary);
+        }
+
+        .btn-win {
+            background-color: var(--btn-win);
+            color: var(--text-primary);
+        }
+
+        .btn-lose {
+            background-color: var(--btn-lose);
+            color: var(--text-primary);
+        }
+
+        .btn-neutral {
+            background-color: var(--btn-neutral);
+            color: var(--text-primary);
+        }
+
+        .btn-treat {
+            background-color: var(--btn-treat);
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            padding: 1rem 2rem;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .message-fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .message-item {
+            font-size: 1.1rem;
+            margin: 0.75rem 0;
+            padding: 0.5rem;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .countdown-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ff6b6b;
+            text-shadow: 2px 2px 4px var(--shadow-light);
+            animation: pulse 1s ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .countdown-go {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4ecdc4;
+            text-shadow: 2px 2px 4px var(--shadow-light);
+            animation: bounce 0.8s ease;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .loading-spinner {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+        }
+
+        @media (max-width: 576px) {
+            .container-fluid {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .section-card {
+                padding: 1rem;
+            }
+            
+            .btn-custom {
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
+                min-height: 50px;
+            }
+            
+            .btn-treat {
+                font-size: 1rem;
+                padding: 0.75rem 1.5rem;
+            }
+            
+            h1.display-4 {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            .btn-custom:hover {
+                transform: none;
+            }
+            
+            .btn-custom:active {
+                transform: scale(0.98);
+                transition: transform 0.1s ease;
+            }
+        }
     </style>
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container-fluid">
@@ -69,7 +313,7 @@
 
                 <!-- Pre-Game Section -->
                 <div class="section-card mb-4">
-                    <div class="row g-3">
+                    <div class="row g-3" style="justify-content: center;">
                         <div class="col-12 col-sm-6">
                             <button class="btn btn-custom btn-boost w-100" onclick="getPreGameBoost()">
                                 <span class="emoji">🚀</span>
@@ -90,7 +334,7 @@
                     <div class="section-header text-center">
                         <h5 class="mb-3">So, how did it go?</h5>
                     </div>
-                    <div class="row g-3">
+                    <div class="row g-3" style="justify-content: center;">
                         <div class="col-12 col-sm-4">
                             <button class="btn btn-custom btn-win w-100" onclick="postGameResult('win')">
                                 <span class="emoji">😃</span>
@@ -136,9 +380,191 @@
         </div>
     </div>
 
+    <script>
+        // Affirmations and messages
+        const preGame = [
+            "🏋🏽 You prepared for this. You *are* ready.",
+            "💥 You bring the heat, the heart, and the hustle.",
+            "🧠 Your mind is calm. You know what to do.",
+            "🚀 You are ready to blast off!",
+            "🔥 Win or lose, your courage already makes you victorious.",
+            "😄 You're gonna feel so good when you finish this.",
+            "💨 You are unstoppable!"
+        ];
 
-    
-    <!-- Custom JavaScript -->
-    <script src="app.js"></script>
+        const postWin = [
+            "🎉 You did THAT! Champion energy activated!",
+            "🏆 Your hard work paid off — the victory is yours!",
+            "👑 You didn't just show up. You showed OUT.",
+            "💎 You turned the pressure into power.",
+            "🌟 Yeah! You lit it up!",
+            "🏁 Ooooh! Done feels gooooood.",
+            "✅ Yaaaaay! Check it off the list!"
+        ];
+
+        const postLose = [
+            "💔 Disappointment hurts, but growth is in the grit.",
+            "💡 You learned. You leveled up. You live to rise again.",
+            "🦁 One stumble does not define a warrior like you.",
+            "💥 You gave your all — and that matters more than medals.",
+            "🍳 You can't make an omelette without breaking some eggs. Try again.",
+            "🧹 Dust yourself off, and try again. You'll get it next time!",
+            "🌱 Setbacks sow seeds. You'll come back even stronger."
+        ];
+
+        const postNeutral = [
+            "🎬 At least you started. And next time you'll keep going.",
+            "🛠️ Progress over perfection — always.",
+            "🎯 You showed up and pushed through. That's elite energy.",
+            "🧰 You did what you could with what you had. Now, you know what you need to finish.",
+            "📏 Each and every try brings you closer to done.",
+            "🏃 You're building character with every rep.",
+            "🌈 Keep showing up. Keep growing. It's all unfolding."
+        ];
+
+        const treats = [
+            "🍩 Grab a delicious treat — you earned every bite!",
+            "📸 Snap a selfie to remember this moment of glory.",
+            "🕺 Dance like nobody's watching (or like everyone is watching and you LOVE it)!",
+            "🎶 Blast your hype anthem and strut like a superstar.",
+            "😁 Smile your biggest, cheesiest smile and feel the glow.",
+            "💭 Remember one good thing that happened for you in the past few days.",
+            "☺️ Think of something that you're grateful for.",
+            "🎤 Hum your favorite tune and let the buzz feel your heart.",
+            "🧘‍♀️ Unplug. Chill. Rest. You showed up today — now soak in the win."
+        ];
+
+        function showLoading() {
+            document.getElementById('loadingSpinner').style.display = 'block';
+        }
+
+        function hideLoading() {
+            document.getElementById('loadingSpinner').style.display = 'none';
+        }
+
+        function clearMessageArea() {
+            const messageArea = document.getElementById('messageArea');
+            messageArea.innerHTML = '';
+        }
+
+        function displayMessage(content, className = 'message-fade-in') {
+            const messageArea = document.getElementById('messageArea');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = className;
+            messageDiv.innerHTML = content;
+            messageArea.appendChild(messageDiv);
+        }
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        function getRandomMessages(array, count = 3) {
+            const shuffled = [...array].sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, count);
+        }
+
+        async function getPreGameBoost() {
+            showLoading();
+            await sleep(500);
+            hideLoading();
+            clearMessageArea();
+            
+            displayMessage('<div class="message-title">POWER-UP</div>');
+            
+            const messages = getRandomMessages(preGame, 3);
+            
+            for (let i = 0; i < messages.length; i++) {
+                await sleep(1500);
+                displayMessage(`<div class="message-item">${messages[i]}</div>`);
+            }
+        }
+
+        async function startCountdown() {
+            clearMessageArea();
+            
+            displayMessage('<div class="message-title">⏳ Prepare for awesomeness in...</div>');
+            
+            await sleep(1000);
+            
+            for (let i = 5; i >= 1; i--) {
+                displayMessage(`<div class="countdown-number">⚡ ${i}</div>`);
+                await sleep(1000);
+                clearMessageArea();
+            }
+            
+            displayMessage('<div class="countdown-go">🎯 GO! You got this!!! 🏁</div>');
+        }
+
+        async function postGameResult(result) {
+            showLoading();
+            await sleep(500);
+            hideLoading();
+            clearMessageArea();
+            
+            let messages, title;
+            
+            if (result === 'win') {
+                messages = getRandomMessages(postWin, 3);
+                title = 'CELEBRATION';
+            } else if (result === 'lose') {
+                messages = getRandomMessages(postLose, 3);
+                title = 'REFLECTION';
+            } else {
+                messages = getRandomMessages(postNeutral, 3);
+                title = 'RECOGNITION';
+            }
+            
+            displayMessage(`<div class="message-title">${title}</div>`);
+            
+            for (let i = 0; i < messages.length; i++) {
+                await sleep(1500);
+                displayMessage(`<div class="message-item">${messages[i]}</div>`);
+            }
+        }
+
+        async function treatYoSelf() {
+            showLoading();
+            await sleep(500);
+            hideLoading();
+            clearMessageArea();
+            
+            displayMessage('<div class="message-title">💫 You deserve joy. No permission required. Now, go treat yo\' self!</div>');
+            
+            await sleep(2000);
+            
+            const randomTreat = treats[Math.floor(Math.random() * treats.length)];
+            displayMessage(`<div class="message-item">${randomTreat}</div>`);
+            
+            await sleep(2000);
+            
+            displayMessage('<div class="message-item">⏳ Take 7 seconds to bask in the glow of you...</div>');
+            
+            await sleep(1000);
+            
+            for (let i = 7; i >= 1; i--) {
+                displayMessage(`<div class="countdown-number">🌟 ${i}</div>`);
+                await sleep(1000);
+            }
+            
+            displayMessage('<div class="countdown-go">🌈 THE UNIVERSE IS CHEERING FOR YOU. Shine on, you brilliant being! 💖</div>');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.btn-custom');
+            
+            buttons.forEach(button => {
+                button.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                
+                button.addEventListener('touchend', function() {
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
