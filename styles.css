@@ -1,0 +1,342 @@
+/* You Got This - Mobile-First Responsive Styles */
+
+:root {
+    --bg-primary: #e6f7ff;
+    --text-primary: #333;
+    --text-secondary: #444;
+    --btn-boost: #FFB3BA;
+    --btn-countdown: #FFDFBA;
+    --btn-win: #FFFFBA;
+    --btn-lose: #BAFFC9;
+    --btn-neutral: #BAE1FF;
+    --btn-treat: #D5BAFF;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+body {
+    background-color: var(--bg-primary);
+    font-family: 'Helvetica', Arial, sans-serif;
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Emoji color support */
+.emoji {
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Android Emoji", "EmojiSymbols", "EmojiOne Mozilla", "Twemoji Mozilla", "Segoe UI Symbol", "Noto Emoji";
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-feature-settings: "liga";
+    font-feature-settings: "liga";
+}
+
+/* Header Styles */
+h1.display-4 {
+    color: var(--text-primary) !important;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    text-shadow: 2px 2px 4px var(--shadow-light);
+}
+
+/* Card Styles */
+.message-card {
+    background: white;
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px var(--shadow-light);
+    min-height: 200px;
+    transition: var(--transition);
+}
+
+.message-card:hover {
+    box-shadow: 0 6px 20px var(--shadow-medium);
+}
+
+.message-area {
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Section Cards */
+.section-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px var(--shadow-light);
+    transition: var(--transition);
+}
+
+.section-card:hover {
+    box-shadow: 0 4px 16px var(--shadow-medium);
+}
+
+.section-header h5 {
+    color: var(--text-secondary);
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* Custom Button Styles */
+.btn-custom {
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border: 3px solid transparent;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 6px var(--shadow-light);
+}
+
+.btn-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-medium);
+}
+
+.btn-custom:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px var(--shadow-light);
+}
+
+.btn-custom i {
+    font-size: 1.2em;
+}
+
+/* Specific Button Colors */
+.btn-boost {
+    background-color: var(--btn-boost);
+    color: var(--text-primary);
+}
+
+.btn-boost:hover {
+    background-color: #ff9ba3;
+    color: var(--text-primary);
+}
+
+.btn-countdown {
+    background-color: var(--btn-countdown);
+    color: var(--text-primary);
+}
+
+.btn-countdown:hover {
+    background-color: #ffcf9f;
+    color: var(--text-primary);
+}
+
+.btn-win {
+    background-color: var(--btn-win);
+    color: var(--text-primary);
+}
+
+.btn-win:hover {
+    background-color: #ffff9f;
+    color: var(--text-primary);
+}
+
+.btn-lose {
+    background-color: var(--btn-lose);
+    color: var(--text-primary);
+}
+
+.btn-lose:hover {
+    background-color: #9fffae;
+    color: var(--text-primary);
+}
+
+.btn-neutral {
+    background-color: var(--btn-neutral);
+    color: var(--text-primary);
+}
+
+.btn-neutral:hover {
+    background-color: #9fd1ff;
+    color: var(--text-primary);
+}
+
+.btn-treat {
+    background-color: var(--btn-treat);
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+    display: block;
+}
+
+.btn-treat:hover {
+    background-color: #c49fff;
+    color: var(--text-primary);
+}
+
+/* Message Display Animations */
+.message-fade-in {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.message-item {
+    font-size: 1.1rem;
+    margin: 0.75rem 0;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.message-item:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.02);
+}
+
+/* Countdown Styles */
+.countdown-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ff6b6b;
+    text-shadow: 2px 2px 4px var(--shadow-light);
+    animation: pulse 1s ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.countdown-go {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4ecdc4;
+    text-shadow: 2px 2px 4px var(--shadow-light);
+    animation: bounce 0.8s ease;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    .container-fluid {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .section-card {
+        padding: 1rem;
+    }
+    
+    .btn-custom {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        min-height: 50px;
+    }
+    
+    .btn-treat {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+    }
+    
+    h1.display-4 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .btn-custom {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.75rem;
+        min-height: 45px;
+    }
+    
+    .message-area {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+}
+
+/* Touch-friendly enhancements */
+@media (hover: none) and (pointer: coarse) {
+    .btn-custom:hover {
+        transform: none;
+    }
+    
+    .btn-custom:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --shadow-light: rgba(0, 0, 0, 0.3);
+        --shadow-medium: rgba(0, 0, 0, 0.4);
+    }
+    
+    .btn-custom {
+        border: 2px solid var(--text-primary);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

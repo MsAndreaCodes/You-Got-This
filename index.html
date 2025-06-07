@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🙌🏾 You Got This 🙌🏾</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+                <!-- Header -->
+                <div class="text-center py-4">
+                    <h1 class="display-4 fw-bold text-primary mb-3">
+                        <span class="emoji">🙌🏾</span>
+                        Ms. Andrea says You Got This!
+                        <span class="emoji">🙌🏾</span>
+                    </h1>
+                </div>
+
+                <!-- Message Display Area -->
+                <div class="card mb-4 message-card">
+                    <div class="card-body">
+                        <div id="messageArea" class="message-area text-center">
+                            <p class="lead text-muted">
+                                <span class="emoji">⭐</span>
+                                Ready to get motivated? Choose an option below!
+                                <span class="emoji">⭐</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pre-Game Section -->
+                <div class="section-card mb-4">
+                    <div class="row g-3">
+                        <div class="col-12 col-sm-6">
+                            <button class="btn btn-custom btn-boost w-100" onclick="getPreGameBoost()">
+                                <span class="emoji">🚀</span>
+                                Gimme a Boost!
+                            </button>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <button class="btn btn-custom btn-countdown w-100" onclick="startCountdown()">
+                                <span class="emoji">⏲️</span>
+                                Countdown to Go Time!
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post-Game Section -->
+                <div class="section-card mb-4">
+                    <div class="section-header text-center">
+                        <h5 class="mb-3">So, how did it go?</h5>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-12 col-sm-4">
+                            <button class="btn btn-custom btn-win w-100" onclick="postGameResult('win')">
+                                <span class="emoji">😃</span>
+                                I Did It!
+                            </button>
+                        </div>
+                        <div class="col-12 col-sm-4">
+                            <button class="btn btn-custom btn-lose w-100" onclick="postGameResult('lose')">
+                                <span class="emoji">😔</span>
+                                I Didn't
+                            </button>
+                        </div>
+                        <div class="col-12 col-sm-4">
+                            <button class="btn btn-custom btn-neutral w-100" onclick="postGameResult('neutral')">
+                                <span class="emoji">🫤</span>
+                                I Gave It a Shot
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Treat Section -->
+                <div class="section-card mb-4">
+                    <div class="section-header text-center">
+                        <h5 class="mb-3">No matter what...</h5>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-custom btn-treat btn-lg" onclick="treatYoSelf()">
+                            <span class="emoji">✨</span>
+                            Treat Yo' Self
+                            <span class="emoji">✨</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner" style="display: none;">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
